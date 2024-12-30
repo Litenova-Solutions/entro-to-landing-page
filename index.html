@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entro.to - Automated Event Ticketing Platform (Coming 2025)</title>
+    <meta name="description"
+        content="Ultra-affordable ticketing platform with complete financial automation at €0.10 per ticket. Launching 2025.">
+
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Color Variables - Matching Litenova Solutions */
+        :root {
+            --litenova-dark: #121212;
+            --litenova-gold: #ffce63;
+            --litenova-muted-gold: rgba(255, 195, 0, 0.15);
+            --litenova-card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--litenova-dark);
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Text Styles */
+        .text-gold {
+            color: var(--litenova-gold);
+        }
+
+        /* Coming Soon Badge */
+        .coming-soon-badge {
+            background: rgba(255, 206, 99, 0.1);
+            border: 1px solid var(--litenova-gold);
+            color: var(--litenova-gold);
+            padding: 8px 16px;
+            border-radius: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+
+        /* Price Tag */
+        .price-tag {
+            background: rgba(255, 206, 99, 0.1);
+            border: 1px solid var(--litenova-gold);
+            color: var(--litenova-gold);
+            padding: 12px 32px;
+            border-radius: 28px;
+            font-size: 1.25rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg,
+                    rgba(18, 18, 18, 0.95) 0%,
+                    rgba(18, 18, 18, 0.98) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--litenova-gold);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            background: rgba(255, 206, 99, 0.1);
+            border: 1px solid rgba(255, 206, 99, 0.2);
+            padding: 12px 24px;
+            border-radius: 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Approach Cards */
+        .approach-card {
+            background: var(--litenova-card-bg);
+            border: 1px solid rgba(255, 206, 99, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-wrapper {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            background: rgba(255, 206, 99, 0.1);
+            border-radius: 12px;
+        }
+
+        .material-icons {
+            color: var(--litenova-gold);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            color: var(--litenova-gold);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        /* Technical Cards */
+        .technical-card {
+            background: var(--litenova-card-bg);
+            border: 1px solid rgba(255, 206, 99, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .technical-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .technical-card .icon-wrapper {
+            margin-bottom: 1rem;
+        }
+
+        .technical-card h4 {
+            color: var(--litenova-gold);
+            margin-bottom: 1rem;
+        }
+
+        .technical-card p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Product Attribution */
+        .product-attribution {
+            text-align: center;
+            padding: 2rem 0;
+            background: rgba(255, 206, 99, 0.02);
+            border-top: 1px solid rgba(255, 206, 99, 0.1);
+        }
+
+        .product-attribution p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .product-attribution {
+            text-align: center;
+            padding: 2rem 0;
+            background: rgba(255, 206, 99, 0.02);
+            border-top: 1px solid rgba(255, 206, 99, 0.1);
+        }
+
+        .product-attribution p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .litenova-link {
+            color: var(--litenova-gold);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .litenova-link:hover {
+            color: var(--litenova-gold);
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-info .material-icons {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Entro.to</h1>
+            <h2>Automated Event Ticketing Platform</h2>
+            <p>Transparent pricing, complete automation, and ethical business practices.</p>
+
+            <div class="price-tag">
+                <span class="material-icons">euro</span>
+                0.10 per ticket (incl. VAT)
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="material-icons">code</span>
+                    Development: Q1-Q4 2024
+                </div>
+                <div class="timeline-item">
+                    <span class="material-icons">bug_report</span>
+                    Beta Testing: Q1 2025
+                </div>
+                <div class="timeline-item">
+                    <span class="material-icons">rocket_launch</span>
+                    Launch: Q2 2025
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Principles Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Approach</h2>
+
+            <div class="row g-4">
+                <!-- Automation -->
+                <div class="col-md-4">
+                    <div class="approach-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">auto_awesome</span>
+                        </div>
+                        <h3 class="h5 text-gold">Complete Automation</h3>
+                        <p>Fully automated financial operations with instant payouts and smart reconciliation. Minimal
+                            human intervention required.</p>
+                    </div>
+                </div>
+
+                <!-- Transparency -->
+                <div class="col-md-4">
+                    <div class="approach-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">payments</span>
+                        </div>
+                        <h3 class="h5 text-gold">Fair Pricing</h3>
+                        <p>Fixed €0.10 fee per ticket. No percentage cuts, no hidden fees, no surprises. Clear and
+                            honest pricing model.</p>
+                    </div>
+                </div>
+
+                <!-- Technology -->
+                <div class="col-md-4">
+                    <div class="approach-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">memory</span>
+                        </div>
+                        <h3 class="h5 text-gold">Modern Technology</h3>
+                        <p>Built with cutting-edge technology ensuring high performance, reliability, and continuous
+                            feature updates.</p>
+                    </div>
+                </div>
+
+                <!-- Free Resale -->
+                <div class="col-md-4">
+                    <div class="approach-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">sync_alt</span>
+                        </div>
+                        <h3 class="h5 text-gold">Free Resale Platform</h3>
+                        <p>Built-in ticket resale functionality at no additional cost. Combat scalping while maintaining
+                            control over your tickets.</p>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="col-md-4">
+                    <div class="approach-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">security</span>
+                        </div>
+                        <h3 class="h5 text-gold">Enterprise Security</h3>
+                        <p>Bank-grade security standards with advanced fraud prevention and comprehensive data
+                            protection.</p>
+                    </div>
+                </div>
+
+                <!-- Continuous Updates -->
+                <div class="col-md-4">
+                    <div class="approach-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">update</span>
+                        </div>
+                        <h3 class="h5 text-gold">Regular Updates</h3>
+                        <p>Continuous platform improvements and new features based on user feedback, at no additional
+                            cost.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Capabilities -->
+    <section class="section" style="background: rgba(255, 206, 99, 0.02);">
+        <div class="container">
+            <h2 class="section-title">Technical Foundation</h2>
+
+            <div class="row g-4">
+                <!-- Performance -->
+                <div class="col-md-3">
+                    <div class="technical-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">speed</span>
+                        </div>
+                        <h4>High Performance</h4>
+                        <p>Optimized for large-scale ticket sales with minimal latency</p>
+                    </div>
+                </div>
+
+                <!-- Smart Payouts -->
+                <div class="col-md-3">
+                    <div class="technical-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">payments</span>
+                        </div>
+                        <h4>Smart Payouts</h4>
+                        <p>Automated financial operations with customizable schedules</p>
+                    </div>
+                </div>
+
+                <!-- Check-in -->
+                <div class="col-md-3">
+                    <div class="technical-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">qr_code_scanner</span>
+                        </div>
+                        <h4>Reliable Check-in</h4>
+                        <p>Online/offline ticket validation with fraud prevention</p>
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="col-md-3">
+                    <div class="technical-card">
+                        <div class="icon-wrapper">
+                            <span class="material-icons">shield</span>
+                        </div>
+                        <h4>Enterprise Security</h4>
+                        <p>Bank-grade security and data protection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Attribution -->
+    <div class="product-attribution">
+        <div class="container">
+            <p class="mb-2">A <a href="https://litenova.solutions" class="litenova-link" target="_blank"
+                    rel="noopener noreferrer">Litenova Solutions</a> Product</p>
+            <p class="contact-info">
+                <span class="material-icons">email</span>
+                Need more information? Contact us at
+                <a href="mailto:info@litenova.solutions" class="litenova-link">info@litenova.solutions</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add fade-in animation to sections
+        const observerOptions = {
+            root: null,
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
